@@ -22,6 +22,11 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
+      .when('/myprofile',{
+        authRequired: true,
+        templateUrl: 'views/myprofile.html',
+        controller: 'LoginController'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -9,6 +9,7 @@ angular.module('notaphilyApp')
     $scope.login = function(service) {
       simpleLogin.login(service, function(err) {
         $scope.err = err? err + '' : null;
+        return $location.path('/myprofile');
       });
     };
 

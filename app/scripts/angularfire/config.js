@@ -11,7 +11,7 @@ angular.module('notaphilyApp')
   .constant('loginRedirectPath', '/login')
 
   // which login service we're using
-  .constant('loginProviders', 'facebook,twitter')
+  .constant('loginProviders', 'google,twitter')
 
   // your Firebase URL goes here
   .constant('FBURL', 'https://notaphily.firebaseio.com');

@@ -5,7 +5,11 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'firebase',
+    'angularfire.firebase',
+    'angularfire.login',
+    'simpleLoginTools'
   ])
   .config(function ($routeProvider) {
     $routeProvider

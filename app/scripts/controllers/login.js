@@ -12,4 +12,8 @@ angular.module('notaphilyApp')
       });
     };
 
+    $scope.logout = function() {
+      simpleLogin.logout();
+    };
+
   });

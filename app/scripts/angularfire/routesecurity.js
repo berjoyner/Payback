@@ -48,7 +48,7 @@
       }
       else if (this._location.path() === this._loginPath) {
         this._location.replace();
-        this._location.path('/myprofile');
+        this._location.path('/picker');
       }
     },
 

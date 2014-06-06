@@ -22,9 +22,9 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
-      .when('/myprofile',{
+      .when('/picker',{
         authRequired: true,
-        templateUrl: 'views/myprofile.html',
+        templateUrl: 'views/picker.html',
         controller: 'LoginController'
       })
       .otherwise({

@@ -105,8 +105,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 }
 
 .bmenu {
-    margin-left: 100px;
-    margin-bottom: 100px;
+    margin-left: 650px;
+    margin-top: -330px;
     
 }
 .bmenu li {
@@ -118,10 +118,10 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     float: left;
     text-transform: lowercase;
     // text-shadow: 0px 0px 2px #eeb213;
-    color: green;
+    color: #e2eadf;
     padding: 5px 20px;
     margin: 2px;
-    background: black;
+    background: #373f32;
     letter-spacing: 1px;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
@@ -130,22 +130,37 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     transition: all 0.2s linear;
 }
 .bmenu:hover li a {
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0px 0px 10px #90EE90;
     color: transparent;
     background: black;
 }
 .bmenu li a:hover {
     background: rgba(0,0,0,1.0);
-    text-shadow: 0px 0px 1px white;
+    text-shadow: 0px 0px 1px #90EE90;
 }
 
 .moneyheader {
   margin: 0 auto;
   width: 100%;
   padding: 0;
-  margin-top: 100px;
+  margin-top: 80px;
   min-height: 270px;
   background-image: url('../images/money1.jpg');
   background-repeat: no-repeat;
 }
 
+fieldset {
+    margin-top: 300px;
+}
+
+.movedown {
+    margin-top: 500px;
+}
+
+body {
+    background: #e2eadf;
+}
+.logo {
+    font-family: 'Special Elite', cursive;
+    font-size: 80px;
+}

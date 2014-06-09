@@ -103,7 +103,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     width: 200px;
     height:50px;
 }
-
+// Nav Menu for Home Page 
 .bmenu {
     margin-left: 650px;
     margin-top: -330px;
@@ -138,6 +138,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     background: rgba(0,0,0,1.0);
     text-shadow: 0px 0px 1px #90EE90;
 }
+//End Nav Home 
 
 .moneyheader {
   margin: 0 auto;
@@ -163,4 +164,64 @@ body {
 .logo {
     font-family: 'Special Elite', cursive;
     font-size: 80px;
+}
+
+.row {
+    margin-top: 375px;
+    margin-left: 200px;
+    font-family: 'Special Elite', cursive;
+    font-size: 40px;
+}
+
+.col-md-6 {
+    margin-left: -20px;
+}
+.row img {
+    width: 200px;
+    height:250px;
+}
+
+// Nav Menu for My Bank Page 
+.bmenu4 {
+    margin-left: 515px;
+    margin-top: -330px;
+    
+}
+.bmenu4 li {
+    font-size: 20px;
+    display: block;
+}
+.bmenu4 li a {
+    // display: block;
+    float: left;
+    text-transform: lowercase;
+    // text-shadow: 0px 0px 2px #eeb213;
+    color: #e2eadf;
+    padding: 5px 20px;
+    margin: 2px;
+    background: #373f32;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.bmenu4:hover li a {
+    text-shadow: 0px 0px 10px #90EE90;
+    color: transparent;
+    background: black;
+}
+.bmenu4 li a:hover {
+    background: rgba(0,0,0,1.0);
+    text-shadow: 0px 0px 1px #90EE90;
+}
+//End Bank Nav 
+
+.quote {
+    margin-top: 400px;
+}
+.quote p {
+    font-family: 'Special Elite', cursive;
+    font-size: 40px;
 }

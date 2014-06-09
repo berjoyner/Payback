@@ -4,10 +4,13 @@
     <li><a href="#">Home</a></li>
     <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
     <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li>
+    <li ng-cloak ng-show-auth="mybank" ng-controller="LoginController"><a href="#/mybank" ng-click="logout()">My Bank</a></li>
     <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-
 </ul>
+</div>
+
+<div class="quote">
+  <p>“A good reputation is more valuable than money” -Publilius Syrus</p>
 </div>
 
 

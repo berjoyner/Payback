@@ -27,6 +27,11 @@ angular
         templateUrl: 'views/picker.html',
         controller: 'LoginController'
       })
+      .when('/mybank',{
+        authRequired: true,
+        templateUrl: 'views/mybank.html',
+        controller: 'LoginController'
+      })
       .otherwise({
         redirectTo: '/'
       });

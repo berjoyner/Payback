@@ -1,5 +1,5 @@
 {
-  "firebase": "notaphily",
+  "firebase": "payback",
   "public": "app",
   "ignore": [
     "firebase.json",

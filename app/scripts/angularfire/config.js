@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('notaphilyApp')
+angular.module('paybackApp')
 
   // version of this seed app is compatible with angularFire 0.6
   // see tags for other versions: https://github.com/firebase/angularFire-seed/tags
@@ -14,4 +14,4 @@ angular.module('notaphilyApp')
   .constant('loginProviders', 'google,twitter')
 
   // your Firebase URL goes here
-  .constant('FBURL', 'https://notaphily.firebaseio.com');
+  .constant('FBURL', 'https://payback.firebaseio.com');

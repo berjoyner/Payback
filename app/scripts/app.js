@@ -1,12 +1,13 @@
 'use strict';
 
 angular
-  .module('notaphilyApp', [
+  .module('paybackApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ngRoute',
     'firebase',
+    'ui.bootstrap',
     'angularfire.firebase',
     'angularfire.login',
     'simpleLoginTools'
@@ -22,15 +23,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
-      .when('/picker',{
-        authRequired: true,
-        templateUrl: 'views/picker.html',
-        controller: 'LoginController'
-      })
       .when('/mybank',{
         authRequired: true,
         templateUrl: 'views/mybank.html',
-        controller: 'LoginController'
+        controller: 'ModalCtrl'
       })
       .otherwise({
         redirectTo: '/'

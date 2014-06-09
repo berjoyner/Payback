@@ -1,6 +1,6 @@
 (function (angular) {
   'use strict';
-  angular.module('notaphilyApp')
+  angular.module('paybackApp')
     .run(function ($injector, $location, $rootScope, loginRedirectPath) {
       if ($injector.has('$route')) {
         new RouteSecurityManager($location, $rootScope, $injector.get('$route'), loginRedirectPath);
@@ -48,7 +48,7 @@
       }
       else if (this._location.path() === this._loginPath) {
         this._location.replace();
-        this._location.path('/picker');
+        this._location.path('/mybank');
       }
     },
 

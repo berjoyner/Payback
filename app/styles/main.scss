@@ -166,19 +166,42 @@ body {
     font-size: 80px;
 }
 
-.row {
-    margin-top: 375px;
-    margin-left: 200px;
+.payments { 
+    display: inline-block;
+    margin-top: 350px;
+    margin-left: 900px;
     font-family: 'Special Elite', cursive;
-    font-size: 40px;
+    font-size: 15px;
 }
 
-.col-md-6 {
-    margin-left: -20px;
+.payments div {
+    display: inline-block;
+    float: left;
 }
-.row img {
-    width: 200px;
-    height:250px;
+
+.payments img {
+    width: 70px;
+    height:90px;
+}
+.welcome {
+    margin-top: -150px;
+    margin-left: -100px;
+    font-family: 'Special Elite', cursive;
+    font-size: 25px;
+}
+
+.bank {
+    margin-top: 20px;
+    margin-left: 350px;
+    font-family: 'Special Elite', cursive;
+    font-size: 75px;
+}
+
+.noaccount {
+    margin-top: 50px;
+    margin-left: 250px;
+    font-family: 'Special Elite', cursive;
+    font-size: 25px;
 }
 
 // Nav Menu for My Bank Page 

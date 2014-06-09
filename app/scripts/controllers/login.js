@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('notaphilyApp')
+angular.module('paybackApp')
   .controller('LoginController', function($scope, simpleLogin) {
     $scope.pass = null;
     $scope.err = null;

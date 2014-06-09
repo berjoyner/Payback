@@ -1,14 +1,61 @@
 <div>
-<ul class="bmenu4">
+<ul class="bmenu">
     <li><a href="#">Home</a></li>
     <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
     <!-- <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li> -->
-    <li><a href="#/picker">Add New</a></li>
-    <li><a href="#/mybank">My Bank</a></li>
-    <li><a href="#">About</a></li>    
+    <li><a href="#">About</a></li>
 </ul>
 </div>
 
-<div>
-<p> testing my profile!</p>
+<div ng-controller="ModalCtrl">
+    <script type="text/ng-template" id="modal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Im a modal!</h3>
+        </div>
+        <div class="modal-body">
+
+        <p>In Modal</p>
+        //     <ul>
+        //         <li ng-repeat="item in items">
+        //             <a ng-click="selected.item = item">{{ item }}</a>
+        //         </li>
+        //     </ul>
+        //     Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
 </div>
+
+ <div class="payments">
+  		<div>Loaned
+  	<br>
+  	<a href="#/mybank" ng-click="open()"><img src="images/owed.png"></a>
+	<br>
+  	</div>
+  		<div>Borrowed 
+  		<br>
+		<a href="#/mybank" ng-click="open()"><img src="images/owe.png"></a>
+  		</div>
+	</div>
+
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+
+<div class="welcome">
+	<span class="welcome1">Welcome!</span>
+</div>
+
+<div class="bank">
+	<span class="bank1">My Bank</span>
+</div>
+
+<div class="noaccount">
+	<span class="noaccount1">You have no open accounts at this time.</span>
+</div>
+
+
+
+
+

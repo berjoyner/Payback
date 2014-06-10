@@ -8,17 +8,16 @@
 </ul>
 </div>
 
-<div class="row">
-<div class="col-lg-10">
-	<span class="welcome1">Welcome!</span>
-	<span class="bank1">My Bank</span>
-	<span class="noaccount1">You have no open accounts at this time.</span>
+<div class="row welcome">
+	<span class="welcome1">Welcome!</span><br>
+	<center><span style="font-size:75pt" class="bank1">My Bank.</span><br></center>
+	<center><span style="font-size:20pt" class="noaccount1">(You have no open accounts at this time.)</span></center>
 </div>
 
 <!-- MODALS START-->
-
+<div class="row">
 <!-- Loaned Modal  -->
-<div class="col-lg-1">
+<div class="col-lg-6">
 <div ng-controller="LoanedCtrl">
     <script type="text/ng-template" id="loaned.html">
         <div class="modal-header">
@@ -49,7 +48,7 @@
 </div>
 
 <!-- Borrowed Modal  -->
-<div class="col-lg-1">
+<div class="col-lg-6">
 <div ng-controller="BorrowedCtrl">
     <script type="text/ng-template" id="borrowed.html">
         <div class="modal-header">

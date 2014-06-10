@@ -58,7 +58,7 @@ angular.module('simpleLoginTools', [])
  */
   .config(function($provide) {
     // adapt ng-cloak to wait for auth before it does its magic
-    $provide.decorator('ngCloakDirective', function($delegate, waitForAuth) {
+    $provide.decorator('ngCloakDirective', ['$delegate', 'waitForAuth',function($delegate, waitForAuth) {
       var directive = $delegate[0];
       // make a copy of the old directive
       var _compile = directive.compile;
@@ -70,7 +70,7 @@ angular.module('simpleLoginTools', [])
       };
       // return the modified directive
       return $delegate;
-    });
+    }]);
   })
 
 /**

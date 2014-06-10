@@ -166,43 +166,61 @@ body {
     font-size: 80px;
 }
 
+.col-lg-1 {
+    margin-top:300px;
+}
 .payments { 
     display: inline-block;
-    margin-top: 350px;
-    margin-left: 900px;
+    // margin-top: 350px;
+    // margin-left: 900px;
     font-family: 'Special Elite', cursive;
     font-size: 15px;
-}
-
-.payments div {
-    display: inline-block;
-    float: left;
 }
 
 .payments img {
     width: 70px;
     height:90px;
 }
-.welcome {
-    margin-top: -150px;
+.payments2 { 
+    display: inline-block;
+    // margin-top: 10px;
+    // margin-left: 900px;
+    font-family: 'Special Elite', cursive;
+    font-size: 15px;
+}
+
+.payments2 img {
+    width: 70px;
+    height:90px;
+}
+
+.col-lg-10 {
+    font-family: 'Special Elite', cursive;
+    font-size: 25px;
+    margin-top: 350px;
     margin-left: -100px;
-    font-family: 'Special Elite', cursive;
-    font-size: 25px;
 }
 
-.bank {
-    margin-top: 20px;
-    margin-left: 350px;
-    font-family: 'Special Elite', cursive;
-    font-size: 75px;
-}
+// .welcome {
+//     // margin-top: -275px;
+//     // margin-left: -100px;
+//     font-family: 'Special Elite', cursive;
+//     font-size: 25px;
+// }
 
-.noaccount {
-    margin-top: 50px;
-    margin-left: 250px;
-    font-family: 'Special Elite', cursive;
-    font-size: 25px;
-}
+// .bank {
+//     // margin-top: 20px;
+//     // margin-left: 350px;
+//     font-family: 'Special Elite', cursive;
+//     font-size: 75px;
+// }
+
+// .noaccount {
+//     // margin-top: 50px;
+//     // margin-left: 250px;
+//     font-family: 'Special Elite', cursive;
+//     font-size: 25px;
+// }
 
 // Nav Menu for My Bank Page 
 .bmenu4 {

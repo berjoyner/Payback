@@ -1,4 +1,3 @@
-<!-- NAV -->
 <div>
 <ul class="bmenu">
     <li><a href="#">Home</a></li>
@@ -8,17 +7,11 @@
 </ul>
 </div>
 
-<div class="row">
-<div class="col-lg-10">
-	<span class="welcome1">Welcome!</span>
-	<span class="bank1">My Bank</span>
-	<span class="noaccount1">You have no open accounts at this time.</span>
-</div>
-
+<div class="col-lg-6">
 <!-- MODALS START-->
 
 <!-- Loaned Modal  -->
-<div class="col-lg-1">
+
 <div ng-controller="LoanedCtrl">
     <script type="text/ng-template" id="loaned.html">
         <div class="modal-header">
@@ -26,7 +19,7 @@
         </div>
         <div class="modal-body">
 
-        <p>LOAN MODAL</p>
+        	<p>LOAN MODAL</p>
         //     <ul>
         //         <li ng-repeat="item in items">
         //             <a ng-click="selected.item = item">{{ item }}</a>
@@ -39,18 +32,19 @@
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
     </script>
-	 	<div class="payments">
-	  		<p>Loaned</p>
-			<a href="#/mybank" ng-click="open()"><img src="images/owed.png"></a>
-	    </div>
-	    <div ng-show="selected">Selection from a modal: {{ selected }}
-	    </div>
-</div>
-</div>
+
+  	<div class="col-lg-6">Loaned
+  		<br>
+  		<a href="#/mybank" ng-click="open()"><img src="images/owed.png"></a>
+		<br>
+  	</div>
+  
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+
 
 <!-- Borrowed Modal  -->
-<div class="col-lg-1">
-<div ng-controller="BorrowedCtrl">
+
+<!-- <div ng-controller="BorrowedCtrl">
     <script type="text/ng-template" id="borrowed.html">
         <div class="modal-header">
             <h3 class="modal-title">Im a modal!</h3>
@@ -70,13 +64,19 @@
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
     </script>
-		 <div class="payments2">
-	  		<p>Borrowed</p>
-			<a href="#/mybank" ng-click="open()"><img src="images/owe.png"></a>
-	    </div>
-    <div ng-show="selected">Selection from a modal: {{ selected }}
+ <div class="payments2">
+  		<div>Borrowed
+  	<br>
+  	<a href="#/mybank" ng-click="open()"><img src="images/owe.png"></a>
+	<br>
+  	</div>
     </div>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
 </div>
-</div>
+</div> -->
 <!--  MODALS END  -->
+
+<div class="noaccount">
+	<span class="noaccount1">You have no open accounts at this time.</span>
+</div>
 </div>

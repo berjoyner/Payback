@@ -23,11 +23,6 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
-      // .when('/testinglayout',{
-      //   authRequired: true,
-      //   templateUrl: 'views/testinglayout.html',
-      //   controller: 'LoginController'
-      // })
       .when('/mybank',{
         authRequired: true,
         templateUrl: 'views/mybank.html',

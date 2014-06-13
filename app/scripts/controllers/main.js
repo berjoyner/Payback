@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 angular.module('paybackApp')
   .controller('MainCtrl', function ($scope) {
@@ -12,7 +12,7 @@ angular.module('paybackApp')
 //Loan Controllers
 
  .controller('LoanedCtrl', function ($scope, $modal, $log) {
-	$scope.items = ['item1', 'item2', 'item3'];
+  $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.open = function (size) {
 
@@ -54,7 +54,7 @@ angular.module('paybackApp')
 //Borrowed Controllers
 
    .controller('BorrowedCtrl', function ($scope, $modal, $log) {
-	$scope.items = ['item1', 'item2', 'item3'];
+  $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.open = function (size) {
 

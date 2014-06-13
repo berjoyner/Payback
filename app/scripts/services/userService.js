@@ -1,21 +1,25 @@
-// 'use strict';
-angular.module('paybackApp')
-	.factory('PostsSvc', function($resource) {
-		return $resource('api/collections/payback',
-			{},
-			{
-				query: { method: 'GET', isArray: true },
-				create: { method: 'POST'}
-			});
-	})
-	.factory('PostSvc', function($resource) {
-		return $resource('api/collections/payback/:id',
-			{
-				id: '@_id'
-			},
-			{
-				show: { method: 'GET'},
-				edit: { method: 'PUT'},
-				delete: { method: 'DELETE'}
-			});
-	})
+angular.module('paydayApp')
+	.factory('BlogService',['$firebase', 'FIREBASE_URI', function($firebase, FIREBASE_URI) {
+			var ref = new Firebase(FIREBASE_URI);
+			var blogPosts = $firebase(ref);
+
+			// crud methods
+
+			var getAllPosts = function() {
+					return blogPosts;
+			};
+
+			var newPost = function(post) {
+				blogPosts.$add(post);
+			};
+			var removePost = function(id) {
+				blogPosts.$remove(id);
+			};
+
+			return {
+				getAllPosts: getAllPosts,
+				newPost: newPost,
+				removePost: removePost
+			}
+
+	}]);

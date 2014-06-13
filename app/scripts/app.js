@@ -28,7 +28,14 @@ angular
         templateUrl: 'views/mybank.html',
         controller: 'LoginController'
       })
+      .when('/newPost', {
+        authRequired: false,
+        templateUrl: 'views/newPost.html',
+        controller: 'BlogController'
+      })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+
+.constant('FIREBASE_URI', 'https://payback.firebaseio.com');

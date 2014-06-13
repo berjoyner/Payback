@@ -9,86 +9,100 @@ angular.module('paybackApp')
     ];
   })
 
-//Loan Controllers
+  .controller('BlogController',['$scope', '$location', 'BlogService', function ($scope, $location, BlogService) {
+    $scope.posts = BlogService.getAllPosts();
 
- .controller('LoanedCtrl', function ($scope, $modal, $log) {
-  $scope.items = ['item1', 'item2', 'item3'];
+    $scope.addPost = function() {
+      BlogService.newPost($scope.newPost);
+      $location.path('#/mybank');
+    };
 
-  $scope.open = function (size) {
+    $scope.removePost = function(postId) {
+      BlogService.removePost(postId);
+    };
+  
+  }]);
 
-    var modalInstance = $modal.open({
-      templateUrl: 'loaned.html',
-      controller: 'LoanedInstanceCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
+// //Loan Controllers
 
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-})
+//  .controller('LoanedCtrl', function ($scope, $modal, $log) {
+//   $scope.items = ['item1', 'item2', 'item3'];
 
- .controller('LoanedInstanceCtrl', function ($scope, $modalInstance, items) {
+//   $scope.open = function (size) {
 
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+//     var modalInstance = $modal.open({
+//       templateUrl: 'loaned.html',
+//       controller: 'LoanedInstanceCtrl',
+//       size: size,
+//       resolve: {
+//         items: function () {
+//           return $scope.items;
+//         }
+//       }
+//     });
 
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
+//     modalInstance.result.then(function (selectedItem) {
+//       $scope.selected = selectedItem;
+//     }, function () {
+//       $log.info('Modal dismissed at: ' + new Date());
+//     });
+//   };
+// })
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-})
+//  .controller('LoanedInstanceCtrl', function ($scope, $modalInstance, items) {
 
-//Borrowed Controllers
+//   $scope.items = items;
+//   $scope.selected = {
+//     item: $scope.items[0]
+//   };
 
-   .controller('BorrowedCtrl', function ($scope, $modal, $log) {
-  $scope.items = ['item1', 'item2', 'item3'];
+//   $scope.ok = function () {
+//     $modalInstance.close($scope.selected.item);
+//   };
 
-  $scope.open = function (size) {
+//   $scope.cancel = function () {
+//     $modalInstance.dismiss('cancel');
+//   };
+// })
 
-    var modalInstance = $modal.open({
-      templateUrl: 'borrowed.html',
-      controller: 'BorrowedInstanceCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
+// //Borrowed Controllers
 
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-})
+//    .controller('BorrowedCtrl', function ($scope, $modal, $log) {
+//   $scope.items = ['item1', 'item2', 'item3'];
 
-.controller('BorrowedInstanceCtrl', function ($scope, $modalInstance, items) {
+//   $scope.open = function (size) {
 
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+//     var modalInstance = $modal.open({
+//       templateUrl: 'borrowed.html',
+//       controller: 'BorrowedInstanceCtrl',
+//       size: size,
+//       resolve: {
+//         items: function () {
+//           return $scope.items;
+//         }
+//       }
+//     });
 
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
+//     modalInstance.result.then(function (selectedItem) {
+//       $scope.selected = selectedItem;
+//     }, function () {
+//       $log.info('Modal dismissed at: ' + new Date());
+//     });
+//   };
+// })
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-});
+// .controller('BorrowedInstanceCtrl', function ($scope, $modalInstance, items) {
+
+//   $scope.items = items;
+//   $scope.selected = {
+//     item: $scope.items[0]
+//   };
+
+//   $scope.ok = function () {
+//     $modalInstance.close($scope.selected.item);
+//   };
+
+//   $scope.cancel = function () {
+//     $modalInstance.dismiss('cancel');
+//   };
+// });

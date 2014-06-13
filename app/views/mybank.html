@@ -14,9 +14,30 @@
 	<center><span style="font-size:20pt" class="noaccount1">(You have no open accounts at this time.)</span></center>
 </div>
 
-<!-- MODALS START-->
 <div class="row">
-<!-- Loaned Modal  -->
+  <div class="col-md-8">
+    <article ng-repeat="(index, post) in posts">
+
+      <h4>{{post.title}}</h4>
+      <p>{{post.content}}</p>
+
+      <p class="small">{{post.author}} | <a href="" ng-click="removePost(index)">Remove</a></p>
+      
+    </article>
+
+  </div>
+
+  <div class="col-md-4">
+    <div class="well">
+    <a class="btn btn-primary" ng-href="#/newPost">New Post</a></div>
+  </div>
+  
+</div>
+
+<!-- 
+
+<div class="row">
+
 <div class="col-lg-6">
 <div ng-controller="LoanedCtrl">
     <script type="text/ng-template" id="loaned.html">
@@ -49,7 +70,7 @@
 </div>
 </div>
 
-<!-- Borrowed Modal  -->
+
 <div class="col-lg-6">
 <div ng-controller="BorrowedCtrl">
     <script type="text/ng-template" id="borrowed.html">
@@ -79,5 +100,5 @@
     </div>
 </div>
 </div>
-<!--  MODALS END  -->
-</div>
+
+</div> -->

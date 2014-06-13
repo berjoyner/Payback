@@ -1,0 +1,26 @@
+<div>
+<ul class="bmenu">
+    <li><a href="#">Home</a></li>
+    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
+    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#/mybank">My Bank</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Add New User</h4>
+
+    <form class="form-inline" role="form" novalidate ng-submit="addPost()">
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="newPost.title" placeholder="title">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="newPost.author" placeholder="author">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" ng-model="newPost.content">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Add User</button>
+    </form>
+</div>

@@ -1,25 +1,25 @@
 angular.module('paybackApp')
-	.factory('BlogService',['$firebase', 'FIREBASE_URI', function($firebase, FIREBASE_URI) {
+	.factory('UserService',['$firebase', 'FIREBASE_URI', function($firebase, FIREBASE_URI) {
 			var ref = new Firebase(FIREBASE_URI);
-			var blogPosts = $firebase(ref);
+			var userBank = $firebase(ref);
 
 			// CRUD Methods for Adding & Editing Users 
 
-			var getAllPosts = function() {
-					return blogPosts;
+			var getAllUsers = function() {
+					return userBank;
 			};
 
-			var newPost = function(post) {
-				blogPosts.$add(post);
+			var newUser = function(user) {
+				userBank.$add(user);
 			};
-			var removePost = function(id) {
-				blogPosts.$remove(id);
+			var removeUser = function(id) {
+				userBank.$remove(id);
 			};
 
 			return {
-				getAllPosts: getAllPosts,
-				newPost: newPost,
-				removePost: removePost
+				getAllUsers: getAllUsers,
+				newUser: newUser,
+				removeUser: removeUser
 			}
 
 	}]);

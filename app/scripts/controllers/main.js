@@ -11,16 +11,16 @@ angular.module('paybackApp')
 
 //Controller for Adding and Removing Users to Database 
 
-  .controller('BlogController',['$scope', '$location', 'BlogService', function ($scope, $location, BlogService) {
-    $scope.posts = BlogService.getAllPosts();
+  .controller('UserController',['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
+    $scope.users = UserService.getAllUsers();
 
-    $scope.addPost = function() {
-      BlogService.newPost($scope.newPost);
+    $scope.addUser = function() {
+      UserService.newUser($scope.newUser);
       $location.path('#/mybank');
     };
 
-    $scope.removePost = function(postId) {
-      BlogService.removePost(postId);
+    $scope.removeUser = function(userId) {
+      UserService.removeUser(userId);
     };
   
   }]);

@@ -31,7 +31,7 @@ angular
       .when('/newPost', {
         authRequired: false,
         templateUrl: 'views/newPost.html',
-        controller: 'BlogController'
+        controller: 'UserController'
       })
       .otherwise({
         redirectTo: '/'

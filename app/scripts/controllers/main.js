@@ -23,90 +23,53 @@ angular.module('paybackApp')
       UserService.removeUser(userId);
     };
   
-  }]);
+  }])
 
-// OLD STUFF 
+  .controller('transactionController', function($scope) {
 
-// //Loan Controllers
+      var transactionRef = new Firebase('https://payback.firebaseio.com');
+      $('.btn').click(function (e) {
+        console.log("here");
+          var type = $('#typeInput').val();
+          var amount = $('#amountInput').val();
+          var date = $('#dateInput').val();
+          var description = $('#descriptionInput').val();
+          transactionRef.push({Type: type, Amount: amount, Date: date, Description: description});
+          $('.btn').val('');
+        });
+    });
 
-//  .controller('LoanedCtrl', function ($scope, $modal, $log) {
-//   $scope.items = ['item1', 'item2', 'item3'];
-
-//   $scope.open = function (size) {
-
-//     var modalInstance = $modal.open({
-//       templateUrl: 'loaned.html',
-//       controller: 'LoanedInstanceCtrl',
-//       size: size,
-//       resolve: {
-//         items: function () {
-//           return $scope.items;
-//         }
-//       }
-//     });
-
-//     modalInstance.result.then(function (selectedItem) {
-//       $scope.selected = selectedItem;
-//     }, function () {
-//       $log.info('Modal dismissed at: ' + new Date());
-//     });
-//   };
-// })
-
-//  .controller('LoanedInstanceCtrl', function ($scope, $modalInstance, items) {
-
-//   $scope.items = items;
-//   $scope.selected = {
-//     item: $scope.items[0]
-//   };
-
-//   $scope.ok = function () {
-//     $modalInstance.close($scope.selected.item);
-//   };
-
-//   $scope.cancel = function () {
-//     $modalInstance.dismiss('cancel');
-//   };
-// })
-
-// //Borrowed Controllers
-
-//    .controller('BorrowedCtrl', function ($scope, $modal, $log) {
-//   $scope.items = ['item1', 'item2', 'item3'];
-
-//   $scope.open = function (size) {
-
-//     var modalInstance = $modal.open({
-//       templateUrl: 'borrowed.html',
-//       controller: 'BorrowedInstanceCtrl',
-//       size: size,
-//       resolve: {
-//         items: function () {
-//           return $scope.items;
-//         }
-//       }
-//     });
-
-//     modalInstance.result.then(function (selectedItem) {
-//       $scope.selected = selectedItem;
-//     }, function () {
-//       $log.info('Modal dismissed at: ' + new Date());
-//     });
-//   };
-// })
-
-// .controller('BorrowedInstanceCtrl', function ($scope, $modalInstance, items) {
-
-//   $scope.items = items;
-//   $scope.selected = {
-//     item: $scope.items[0]
-//   };
-
-//   $scope.ok = function () {
-//     $modalInstance.close($scope.selected.item);
-//   };
-
-//   $scope.cancel = function () {
-//     $modalInstance.dismiss('cancel');
-//   };
+//   var userRef = new Firebase('https://payback.firebaseio.com/twitter/');
+// julieRef.on('value', function(snapshot) {
+//   if(snapshot.val() === null) {
+//     alert('User julie does not exist.');
+//   } else {
+//     var firstName = snapshot.val().name.first;
+//     var lastName = snapshot.val().name.last;
+//     alert('User julie’s full name is: ' + firstName + ' ' + lastName);
+//   }
 // });
+
+
+//   function DropdownCtrl($scope) {
+//   $scope.items = [
+//     'The first choice!',
+//     'And another choice for you.',
+//     'but wait! A third!'
+//   ];
+
+//   $scope.status = {
+//     isopen: false
+//   };
+
+//   $scope.toggled = function(open) {
+//     console.log('Dropdown is now: ', open);
+//   };
+
+//   $scope.toggleDropdown = function($event) {
+//     $event.preventDefault();
+//     $event.stopPropagation();
+//     $scope.status.isopen = !$scope.status.isopen;
+//   };
+// }
+

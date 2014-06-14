@@ -9,3 +9,81 @@
 </ul>
 </div>
 <!-- Navigation Bar END -->
+
+<!-- <div ng-controller="DropdownCtrl"> -->
+    <!-- Simple dropdown -->
+ <!--    <span class="dropdown" on-toggle="toggled(open)">
+      <a href class="dropdown-toggle">
+      </a>
+      <ul class="dropdown-menu">
+        <li ng-repeat="choice in items">
+          <a href>{{choice}}</a>
+        </li>
+      </ul>
+    </span> -->
+
+    <!-- Single button -->
+    <!-- <div class="btn-group" dropdown is-open="status.isopen">
+      <button type="button" class="btn .btn-lg btn-success dropdown-toggle" ng-disabled="disabled">
+        User <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div> -->
+
+<body>
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='Message'>
+
+    <div class="userForm">
+<h2>Add New Transaction</h2>
+
+    <form class="form-inline" role="form" novalidate ng-submit="addUser()">
+        <div class="form-group">
+            <input type="text" class="form-control" id='typeInput' placeholder="Transaction Type">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="number" class="form-control" id='amountInput' placeholder="Transaction Amount">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" id='dateInput' placeholder="Transaction Date">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" id='descriptionInput' placeholder="Transaction Description">
+        </div>
+        <button type="submit" class="btn btn-default">Add Transaction</button>
+    </form>
+</div>
+
+    <script>
+      var transactionRef = new Firebase('https://payback.firebaseio.com');
+      $('.btn').click(function (e) {
+      	console.log("here");
+          var type = $('#typeInput').val();
+          var amount = $('#amountInput').val();
+          var date = $('#dateInput').val();
+          var description = $('#descriptionInput').val();
+          transactionRef.push({Type: type, Amount: amount, Date: date, Description: description});
+          $('.btn').val('');
+        });
+      
+      // });
+
+      //  myDataRef.on('child_added', function(snapshot) {
+      //   var message = snapshot.val();
+      //   displayChatMessage(message.name, message.text);
+      // });
+      // function displayChatMessage(name, text) {
+      //   $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+      //   $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      // };
+    </script>
+  </body>

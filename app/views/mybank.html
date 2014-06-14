@@ -12,34 +12,35 @@
 <!-- Main Bank and Using Users -->
 <div class="row welcome">
 	<span class="welcome1">Welcome!</span><br>
-	<center><span style="font-size:75pt" class="bank1">My Bank.</span><br></center>
-	<center><span style="font-size:20pt" class="noaccount1">(You have no open accounts at this time.)</span></center>
+	<center><span style="font-size:55pt" class="bank1">My Bank.</span><br></center>
+	<center><span style="font-size:15pt" class="noaccount1">(You have no open accounts at this time.)</span></center>
 </div>
 <!-- Main Bank and Using Users END-->
 
 
 <!-- Add Users to Database  -->
-  <div class="col-md-4">
-    <div class="well">
-    <a class="btn btn-primary" ng-href="#/newPost">New Post</a></div>
-  </div>
+  <!-- <div class="col-md-4">
+    <div class="user">
+    <a href="#/newPost"><img src="images/dolla.png"></a>
+    <p>Add New User</p></div>
+  </div> -->
 <!-- Add Users to Database END -->
 
+<!-- Current User Transactions  -->
+<div class="col-lg-5 left">
+    <p>Loaned</p>
+    <img src="images/owed.png">
+</div>
 
+<div class="col-lg-5 right">
+    <p>Borrowed</p>
+    <img src="images/owe.png">
+</div>
 
- <!-- <div class="col-md-8">
-    <article ng-repeat="(index, post) in posts">
-
-      <h4>{{post.title}}</h4>
-      <p>{{post.content}}</p>
-
-      <p class="small">{{post.author}} | <a href="" ng-click="removePost(index)">Remove</a></p>
-      
-    </article>
-
-  </div> -->
-
-
+<div class="col-lg-2">
+    <p> New Account</p>
+    <a href="#/newAccount"><img src="images/$.png"></a>
+</div>
 
 <!-- OLD STUFF  -->
 

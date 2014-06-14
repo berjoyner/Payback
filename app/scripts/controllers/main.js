@@ -9,6 +9,8 @@ angular.module('paybackApp')
     ];
   })
 
+//Controller for Adding and Removing Users to Database 
+
   .controller('BlogController',['$scope', '$location', 'BlogService', function ($scope, $location, BlogService) {
     $scope.posts = BlogService.getAllPosts();
 
@@ -22,6 +24,8 @@ angular.module('paybackApp')
     };
   
   }]);
+
+// OLD STUFF 
 
 // //Loan Controllers
 

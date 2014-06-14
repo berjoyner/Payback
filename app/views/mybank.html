@@ -1,4 +1,4 @@
-<!-- NAV -->
+<!-- Navigation Bar -->
 <div>
 <ul class="bmenu">
     <li><a href="#">Home</a></li>
@@ -7,15 +7,27 @@
     <li><a href="#">About</a></li>
 </ul>
 </div>
+<!-- Navigation Bar END -->
 
+<!-- Main Bank and Using Users -->
 <div class="row welcome">
 	<span class="welcome1">Welcome!</span><br>
 	<center><span style="font-size:75pt" class="bank1">My Bank.</span><br></center>
 	<center><span style="font-size:20pt" class="noaccount1">(You have no open accounts at this time.)</span></center>
 </div>
+<!-- Main Bank and Using Users END-->
 
-<div class="row">
-  <div class="col-md-8">
+
+<!-- Add Users to Database  -->
+  <div class="col-md-4">
+    <div class="well">
+    <a class="btn btn-primary" ng-href="#/newPost">New Post</a></div>
+  </div>
+<!-- Add Users to Database END -->
+
+
+
+ <!-- <div class="col-md-8">
     <article ng-repeat="(index, post) in posts">
 
       <h4>{{post.title}}</h4>
@@ -25,18 +37,13 @@
       
     </article>
 
-  </div>
+  </div> -->
 
-  <div class="col-md-4">
-    <div class="well">
-    <a class="btn btn-primary" ng-href="#/newPost">New Post</a></div>
-  </div>
-  
-</div>
 
-<!-- 
 
-<div class="row">
+<!-- OLD STUFF  -->
+
+<!-- <div class="row">
 
 <div class="col-lg-6">
 <div ng-controller="LoanedCtrl">
@@ -101,4 +108,4 @@
 </div>
 </div>
 
-</div> -->
+</div>

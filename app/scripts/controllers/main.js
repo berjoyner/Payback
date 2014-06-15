@@ -11,37 +11,21 @@ angular.module('paybackApp')
 
 //Controller for Adding and Removing Users to Database 
 
-  .controller('UserController',['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
-    $scope.users = UserService.getAllUsers();
+  // .controller('UserController',['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
+  //   $scope.users = UserService.getAllUsers();
 
-    $scope.addUser = function() {
-      UserService.newUser($scope.newUser);
-      $location.path('#/mybank');
-    };
+  //   $scope.addUser = function() {
+  //     UserService.newUser($scope.newUser);
+  //     $location.path('#/mybank');
+  //   };
 
-    $scope.removeUser = function(userId) {
-      UserService.removeUser(userId);
-    };
+  //   $scope.removeUser = function(userId) {
+  //     UserService.removeUser(userId);
+  //   };
   
-  }])
+  // }])
 
   //Controller for Adding New Transactions for Accounts
-
-
-
-function transactionController($scope, $firebase) {
-
-var firebaseRef = new Firebase('https://payback.firebaseio.com'); 
-      $('.addTrans').click(function (e) {
-        console.log("here");
-          var type = $('#typeInput').val();
-          var amount = $('#amountInput').val();
-          var date = $('#dateInput').val();
-          var description = $('#descriptionInput').val();
-          firebaseRef.push({Type: type, Amount: amount, Date: date, Description: description});
-          $('.addTrans').val('');
-        });
-};
 
 
 //   var userRef = new Firebase('https://payback.firebaseio.com/twitter/');

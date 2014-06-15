@@ -28,15 +28,15 @@ angular
         templateUrl: 'views/mybank.html',
         controller: 'LoginController'
       })
-      .when('/newPost', {
-        authRequired: false,
-        templateUrl: 'views/newPost.html',
-        controller: 'UserController'
-      })
+      // .when('/newPost', {
+      //   authRequired: false,
+      //   templateUrl: 'views/newPost.html',
+      //   controller: 'UserController'
+      // })
       .when('/newAccount', {
         authRequired: false,
         templateUrl: 'views/newAccount.html',
-        controller: 'UserController'
+        controller: 'MainCtrl'
       })
       .when('/about', {
         authRequired: false,

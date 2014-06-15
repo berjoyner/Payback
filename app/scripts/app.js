@@ -38,6 +38,11 @@ angular
         templateUrl: 'views/newAccount.html',
         controller: 'UserController'
       })
+      .when('/about', {
+        authRequired: false,
+        templateUrl: 'views/about.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

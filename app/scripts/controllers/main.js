@@ -25,19 +25,24 @@ angular.module('paybackApp')
   
   }])
 
-  .controller('transactionController', function($scope) {
+  //Controller for Adding New Transactions for Accounts
 
-      var transactionRef = new Firebase('https://payback.firebaseio.com');
-      $('.btn').click(function (e) {
+
+
+function transactionController($scope, $firebase) {
+
+var firebaseRef = new Firebase('https://payback.firebaseio.com'); 
+      $('.addTrans').click(function (e) {
         console.log("here");
           var type = $('#typeInput').val();
           var amount = $('#amountInput').val();
           var date = $('#dateInput').val();
           var description = $('#descriptionInput').val();
-          transactionRef.push({Type: type, Amount: amount, Date: date, Description: description});
-          $('.btn').val('');
+          firebaseRef.push({Type: type, Amount: amount, Date: date, Description: description});
+          $('.addTrans').val('');
         });
-    });
+};
+
 
 //   var userRef = new Firebase('https://payback.firebaseio.com/twitter/');
 // julieRef.on('value', function(snapshot) {

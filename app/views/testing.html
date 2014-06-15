@@ -1,0 +1,46 @@
+<!-- <body ng-controller="MainCtrl">
+    <h3>Current User</h3>
+    <select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in users">
+        <option value="">Select a user</option>
+    </select>
+
+    <div ng-if="currentUser">
+        <h3>Items</h3>
+        <table class="table edit">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Count</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr item item-id="{{id}}" ng-repeat="(id, item) in items">
+                <td><input type="text" ng-model="myItem.name" ng-blur="updateItem()"/></td>
+                <td><input type="text" ng-model="myItem.description" ng-blur="updateItem()"/></td>
+                <td><input type="text" ng-model="myItem.count" ng-blur="updateItem()"/></td>
+                <td>
+                    <a href="#" ng-click="removeItem(id)" class="navbar-link">Remove</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="well" ng-if="currentUser">
+        <h4>Add Item</h4>
+
+        <form class="form-inline" role="form" novalidate ng-submit="addItem()">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="newItem.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="newItem.description" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="newItem.count" placeholder="Count">
+            </div>
+            <button type="submit" class="btn btn-default">Add</button>
+        </form>
+    </div> -->

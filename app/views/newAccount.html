@@ -1,17 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="paybackApp">
+<head>
+</head>
+<body ng-controller="MainCtrl">
+
 <!-- Navigation Bar -->
 <div>
 	<ul class="bmenu">
 	    <li><a href="#">Home</a></li>
 	    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
-	    <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li>
-	    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#/mybank">My Bank</a></li>
+	    <!-- <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li> -->
+	    <li ng-controller="LoginController"><a href="#/mybank">My Bank</a></li>
 	    <li><a href="#/about">About</a></li>
 	</ul>
 </div>
 <!-- Navigation Bar END -->
 
+<!-- Add User to Database  -->
+<div class="formStart">
+	<h4>Add User<h4>
+
+		<form class="form-inline" role="form" novalidate ng-submit="addUser(newUser)">
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.name" placeholder="Full Name">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.city" placeholder="City">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.state" placeholder="State">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.twitter" placeholder="Twitter Handle">
+			</div>
+			<button type="submit" class="btn btn-default" value="Add User">Add User to Database</button>
+		</form>
+</div>
+<!-- Add User to Database END  -->
+
+<!-- Current User Displayed -->
+<!-- <h3> Current User </h3>
+<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in users">
+	<option value="">Select a User</option>
+</select>
+
+<div ng-if="currentUser">
+	<h3>Transactions</h3>
+	<table class="table edit">
+		<thead>
+			<tr>
+				<th>Type</th>
+				<th>Amount</th>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Business Partner</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr transaction transaction-id="{{id}}" ng-repeat="(id, transaction) in transactions">
+				<td><input type="text" ng-model="myTransaction.type" ng-blur="updateTransaction()"/></td>
+				<td><input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/></td>
+				<td><input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/></td>
+				<td><input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/></td>
+				<td><input type="text" ng-model="myTransaction.businessPartner" ng-blur="updateTransaction()"/></td>
+				<td><input type="text" ng-model="myTransaction.status" disabled="true"/></td>
+				<td><a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div> -->
+<!-- Current User Displayed END -->
+
+<!-- Add Transaction from User to User  -->
+<!-- <div ng-if="currentUser">
+	<h4>Add Transaction</h4>
+
+	<form class="form-inline" role="form" novalidate ng-submit="addTransaction()">
+		<div>
+			<select class="form-control" ng-model="newTransaction.type">
+				<option value="">Select Transaction Type</option>
+				<option value="Loan">Loan</option>
+				<option value="Borrow">Borrow</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="newTransaction.amount" placeholder="Amount">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="newTransaction.date" placeholder="Date">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="newTransaction.description" placeholder="Description">
+		</div>
+		<div class="form-group">
+			<select class="form-control" ng-model="newTransaction.businessPartner" ng-options="userId as user.name for (userId, user) in users">
+				<option value="">Select a Business Partner</option>
+			</select>
+		</div>
+		<button type="submit" value="Add Transaction" class="btn btn-default">Add Transaction</button>
+	</form>
+</div> -->
+<!-- Add Transaction from User to User END  -->
+
+</body>
+</html>
+
+
 <!-- Adding New User Transaction -->
-<div class="userForm">
+<!-- <div class="userForm">
 		<h2>Add New Transaction</h2>
 
     <form class="form-inline" role="form" novalidate ng-submit="addUser()">
@@ -32,19 +132,18 @@
         </div>
         <button type="submit" class="btn btn-default">Add Transaction</button>
     </form>
-</div>
-
-    <script>
-      var transactionRef = new Firebase('https://payback.firebaseio.com');
-	      $('.btn').click(function (e) {
-		      	console.log("here");
-			          var type = $('#typeInput').val();
-			          var amount = $('#amountInput').val();
-			          var date = $('#dateInput').val();
-			          var description = $('#descriptionInput').val();
-			          transactionRef.push({Type: type, Amount: amount, Date: date, Description: description});
-			          $('.btn').val('');
-        	});
-    </script>
+</div> -->
+    
+  <!--   //   var transactionRef = new Firebase('https://payback.firebaseio.com');
+	   //    $('.btn').click(function (e) {
+		  //     	console.log("here");
+			 //          var type = $('#typeInput').val();
+			 //          var amount = $('#amountInput').val();
+			 //          var date = $('#dateInput').val();
+			 //          var description = $('#descriptionInput').val();
+			 //          transactionRef.push({Type: type, Amount: amount, Date: date, Description: description});
+			 //          $('.btn').val('');
+       	}); -->
+    
 <!-- Adding New User Transaction END -->
 

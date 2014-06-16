@@ -14,4 +14,4 @@ angular.module('paybackApp')
   .constant('loginProviders', 'google,twitter')
 
   // your Firebase URL goes here
-  .constant('FBURL', 'https://payback.firebaseio.com');
+  .constant('FIREBASE_URI', 'https://payback.firebaseio.com');

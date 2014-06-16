@@ -3,7 +3,7 @@
 angular.module('angularfire.firebase', ['firebase'])
 
   // A quick wrapper to abstract creating Firebase references
-  .factory('firebaseRef', function (Firebase, FBURL) {
+  .factory('firebaseRef', function (Firebase, FIREBASE_URI) {
     function pathRef(args) {
       for (var i = 0; i < args.length; i++) {
         if (typeof(args[i]) === 'object') {
@@ -27,7 +27,7 @@ angular.module('angularfire.firebase', ['firebase'])
      * @return a Firebase instance
      */
     return function () {
-      return new Firebase(pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
+      return new Firebase(pathRef([FIREBASE_URI].concat(Array.prototype.slice.call(arguments))));
     };
   })
 

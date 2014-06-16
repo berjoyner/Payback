@@ -2,7 +2,7 @@
 <html ng-app="paybackApp">
 <head>
 </head>
-<body ng-controller="MainCtrl">
+<body>
 
 <!-- Navigation Bar -->
 <div>
@@ -42,7 +42,7 @@
 <!-- Add User to Database END  -->
 
 <!-- Current User Displayed -->
-<!-- <h3> Current User </h3>
+<h3> Current User </h3>
 <select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in users">
 	<option value="">Select a User</option>
 </select>
@@ -72,11 +72,11 @@
 			</tr>
 		</tbody>
 	</table>
-</div> -->
+</div>
 <!-- Current User Displayed END -->
 
 <!-- Add Transaction from User to User  -->
-<!-- <div ng-if="currentUser">
+<div class="well" ng-if="currentUser">
 	<h4>Add Transaction</h4>
 
 	<form class="form-inline" role="form" novalidate ng-submit="addTransaction()">
@@ -87,23 +87,23 @@
 				<option value="Borrow">Borrow</option>
 			</select>
 		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" ng-model="newTransaction.amount" placeholder="Amount">
-		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" ng-model="newTransaction.date" placeholder="Date">
-		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" ng-model="newTransaction.description" placeholder="Description">
-		</div>
-		<div class="form-group">
-			<select class="form-control" ng-model="newTransaction.businessPartner" ng-options="userId as user.name for (userId, user) in users">
-				<option value="">Select a Business Partner</option>
-			</select>
-		</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newTransaction.amount" placeholder="Amount">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newTransaction.date" placeholder="Date">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newTransaction.description" placeholder="Description">
+			</div>
+			<div class="form-group">
+				<select class="form-control" ng-model="newTransaction.businessPartner" ng-options="userId as user.name for (userId, user) in users">
+					<option value="">Select a Business Partner</option>
+				</select>
+			</div>
 		<button type="submit" value="Add Transaction" class="btn btn-default">Add Transaction</button>
 	</form>
-</div> -->
+</div>
 <!-- Add Transaction from User to User END  -->
 
 </body>

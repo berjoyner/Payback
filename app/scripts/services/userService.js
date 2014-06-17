@@ -5,7 +5,7 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 
 	var usersRef = new Firebase(FIREBASE_URI + '/users');
 	var users = $firebase(usersRef);
-	// var currentUser =  null;
+	var currentUser =  null;
 	// var businessPartner = null;
 
 	var addUser = function (user) {

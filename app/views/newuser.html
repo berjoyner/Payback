@@ -1,5 +1,24 @@
-<ul>
-<li><input type="text" data-ng-model="post.title" placeholder="Title"></li>
-<li><textarea data-ng-model="post.content" placeholder="Content"></textarea></li>
-<button data-ng-click="newPost(post)">New Post</button>
-</ul>
+<!-- Add User to Database  -->
+<div class="formStart">
+	<h4>Add User<h4>
+
+		<form class="form-inline" role="form" novalidate ng-submit="addUser(newUser)">
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.name" placeholder="Full Name">
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" ng-model="newUser.email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.city" placeholder="City">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.state" placeholder="State">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="newUser.twitter" placeholder="Twitter Handle">
+			</div>
+			<button type="submit" class="btn btn-default" value="Add User">Add User</button>
+		</form>
+</div>
+<!-- Add User to Database END  -->

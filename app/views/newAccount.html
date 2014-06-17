@@ -43,9 +43,9 @@
 
 <!-- Current User Displayed -->
 <h3> Current User </h3>
-<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
+<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()" onchange="location = this.options[this.selectedIndex].value;">
 	<option value="">Select a User</option>
-	<option value="http://127.0.0.1:9000/#/newUser">New User</option>
+	<option value="#/newUser">New User</option>
 </select>
 <!-- Current User Displayed END -->
 

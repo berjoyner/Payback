@@ -18,7 +18,7 @@
 
 <!-- Add User to Database  -->
 <div class="formStart">
-	<h4>Add User<h4>
+	<h4 class="addUser">Add User<h4>
 
 		<form class="form-inline" role="form" novalidate ng-submit="addUser(newUser)">
 			<div class="form-group">
@@ -36,13 +36,13 @@
 			<div class="form-group">
 				<input type="text" class="form-control" ng-model="newUser.twitter" placeholder="Twitter Handle">
 			</div>
-			<button type="submit" class="btn btn-default" value="Add User">Add User</button>
+			<button type="submit" class="btn btn-default add" value="Add User">Add User</button>
 		</form>
 </div>
 <!-- Add User to Database END  -->
 
 <!-- Current User Displayed -->
-<h3> Current User </h3>
+<h3 class="currentUser"> Current User </h3>
 <select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()" onchange="location = this.options[this.selectedIndex].value;">
 	<option value="">Select a User</option>
 	<option value="#/newUser">New User</option>

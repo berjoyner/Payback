@@ -17,16 +17,6 @@
 </div>
 <!-- Main Bank and Using Users END-->
 
-
-<!-- Add Users to Database  -->
-  <!-- <div class="col-md-4">
-    <div class="user">
-    <a href="#/newPost"><img src="images/dolla.png"></a>
-    <p>Add New User</p></div>
-  </div> -->
-<!-- Add Users to Database END -->
-
-
 <!-- Current User Transactions  -->
 <div class="col-lg-5 left">
     <p>Loaned</p>
@@ -36,6 +26,33 @@
 <div class="col-lg-5 right">
     <p>Borrowed</p>
     <img src="images/owe.png">
+</div>
+
+<div ng-if="currentUser">
+    <h3>Transactions</h3>
+    <table class="table edit">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Business Partner</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr transaction transaction-id="{{id}}" ng-repeat="(id, transaction) in transactions">
+                <td><input type="text" ng-model="myTransaction.type" ng-blur="updateTransaction()"/></td>
+                <td><input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/></td>
+                <td><input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/></td>
+                <td><input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/></td>
+                <td><input type="text" ng-model="myTransaction.businessPartner" ng-blur="updateTransaction()"/></td>
+                <td><input type="text" ng-model="myTransaction.status" disabled="true"/></td>
+                <td><a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <div class="col-lg-2">

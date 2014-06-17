@@ -25,7 +25,7 @@
 				<input type="text" class="form-control" ng-model="newUser.name" placeholder="Full Name">
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" ng-model="newUser.email" placeholder="Email">
+				<input type="email" class="form-control" ng-model="newUser.email" placeholder="Email">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" ng-model="newUser.city" placeholder="City">
@@ -36,7 +36,7 @@
 			<div class="form-group">
 				<input type="text" class="form-control" ng-model="newUser.twitter" placeholder="Twitter Handle">
 			</div>
-			<button type="submit" class="btn btn-default" value="Add User">Add User to Database</button>
+			<button type="submit" class="btn btn-default" value="Add User">Add User</button>
 		</form>
 </div>
 <!-- Add User to Database END  -->
@@ -45,38 +45,12 @@
 <h3> Current User </h3>
 <select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
 	<option value="">Select a User</option>
+	<option value="http://127.0.0.1:9000/#/newUser">New User</option>
 </select>
-
-<div ng-if="currentUser">
-	<h3>Transactions</h3>
-	<table class="table edit">
-		<thead>
-			<tr>
-				<th>Type</th>
-				<th>Amount</th>
-				<th>Date</th>
-				<th>Description</th>
-				<th>Business Partner</th>
-				<th>Status</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr transaction transaction-id="{{id}}" ng-repeat="(id, transaction) in transactions">
-				<td><input type="text" ng-model="myTransaction.type" ng-blur="updateTransaction()"/></td>
-				<td><input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/></td>
-				<td><input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/></td>
-				<td><input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/></td>
-				<td><input type="text" ng-model="myTransaction.businessPartner" ng-blur="updateTransaction()"/></td>
-				<td><input type="text" ng-model="myTransaction.status" disabled="true"/></td>
-				<td><a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a></td>
-			</tr>
-		</tbody>
-	</table>
-</div>
 <!-- Current User Displayed END -->
 
 <!-- Add Transaction from User to User  -->
-<div class="well" ng-if="currentUser">
+<div ng-if="currentUser">
 	<h4>Add Transaction</h4>
 
 	<form class="form-inline" role="form" novalidate ng-submit="addTransaction(newTransaction)">
@@ -91,7 +65,7 @@
 				<input type="text" class="form-control" ng-model="newTransaction.amount" placeholder="Amount">
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" ng-model="newTransaction.date" placeholder="Date">
+				<input type="text" class="form-control" ng-model="newTransaction.date" placeholder="Date MM/DD/YYYY">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" ng-model="newTransaction.description" placeholder="Description">
@@ -108,42 +82,3 @@
 
 </body>
 </html>
-
-
-<!-- Adding New User Transaction -->
-<!-- <div class="userForm">
-		<h2>Add New Transaction</h2>
-
-    <form class="form-inline" role="form" novalidate ng-submit="addUser()">
-        <div class="form-group">
-            <input type="text" class="form-control" id='typeInput' placeholder="Transaction Type">
-        </div>
-        	<br>
-        <div class="form-group">
-            <input type="number" class="form-control" id='amountInput' placeholder="Transaction Amount">
-        </div>
-        	<br>
-        <div class="form-group">
-            <input type="text" class="form-control" id='dateInput' placeholder="Transaction Date">
-        </div>
-        	<br>
-        <div class="form-group">
-            <input type="text" class="form-control" id='descriptionInput' placeholder="Transaction Description">
-        </div>
-        <button type="submit" class="btn btn-default">Add Transaction</button>
-    </form>
-</div> -->
-    
-  <!--   //   var transactionRef = new Firebase('https://payback.firebaseio.com');
-	   //    $('.btn').click(function (e) {
-		  //     	console.log("here");
-			 //          var type = $('#typeInput').val();
-			 //          var amount = $('#amountInput').val();
-			 //          var date = $('#dateInput').val();
-			 //          var description = $('#descriptionInput').val();
-			 //          transactionRef.push({Type: type, Amount: amount, Date: date, Description: description});
-			 //          $('.btn').val('');
-       	}); -->
-    
-<!-- Adding New User Transaction END -->
-

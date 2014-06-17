@@ -43,7 +43,7 @@
 
 <!-- Current User Displayed -->
 <h3> Current User </h3>
-<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in users">
+<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
 	<option value="">Select a User</option>
 </select>
 
@@ -79,7 +79,7 @@
 <div class="well" ng-if="currentUser">
 	<h4>Add Transaction</h4>
 
-	<form class="form-inline" role="form" novalidate ng-submit="addTransaction()">
+	<form class="form-inline" role="form" novalidate ng-submit="addTransaction(newTransaction)">
 		<div>
 			<select class="form-control" ng-model="newTransaction.type">
 				<option value="">Select Transaction Type</option>

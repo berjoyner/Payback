@@ -43,4 +43,4 @@ angular
       });
   })
 
-.constant('FIREBASE_URI', 'https://payback.firebaseio.com');
+.constant('FIREBASE_URI', 'https://payback.firebaseio.com/');

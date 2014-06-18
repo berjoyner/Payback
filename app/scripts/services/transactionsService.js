@@ -13,11 +13,11 @@ angular.module('paybackApp').factory('TransactionsService', ['$firebase', 'FIREB
             var dataRef = new Firebase(FIREBASE_URI + '/users/' + transaction.businessPartner);
                 dataRef.on('value', function(snapshot) {
                     transaction.businessPartner = snapshot.val().name;
-                  alert('Business partner name is ' + snapshot.val().name);
+                  console.log('Business partner name is ' + snapshot.val().name);
         });
 
             transactions.$add(transaction).then(function(ref){
-                alert("Transaction Added");
+                console.log("Transaction Added");
                 UsersService.addTransactionForUsers(ref);
             })
         };
@@ -25,7 +25,7 @@ angular.module('paybackApp').factory('TransactionsService', ['$firebase', 'FIREB
         var removeTransaction = function (transactionId) {
             UsersService.removeTransactionForUsers(transactionId);
             transactions.$remove(transactionId);
-                alert("Transaction Removed");
+                console.log("Transaction Removed");
             }
         
  

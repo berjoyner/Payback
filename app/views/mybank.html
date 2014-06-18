@@ -4,6 +4,7 @@
         <li><a href="#">Home</a></li>
         <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
         <!-- <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li> -->
+        <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#/myProfile">My Profile</a></li>
         <li><a href="#/about">About</a></li>
     </ul>
 </div>
@@ -29,11 +30,12 @@
 </div>
 
 <!-- Current User Displayed -->
-<h3 class="currentUser"> Current User </h3>
-<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
+<div class="userDisplay">
+<select class="form-control display" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
     <option value="">Select a User</option>
     <option value="#/newUser">New User</option>
 </select>
+</div>
 <!-- Current User Displayed END -->
 
 <div ng-if="currentUser">
@@ -66,7 +68,7 @@
 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<div class="col-lg-2">
+<div class="col-lg-2 addNewTrans">
     <p> New Transaction</p>
     <a href="#/newAccount"><img src="images/$.png"></a>
 </div>

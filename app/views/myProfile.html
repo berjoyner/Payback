@@ -1,0 +1,39 @@
+<!-- Navigation Bar -->
+<div>
+	<ul class="bmenu">
+	    <li><a href="#">Home</a></li>
+	    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
+	    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#/mybank">My Bank</a></li>
+	    <li><a href="#/about">About</a></li>
+	</ul>
+</div>
+<!-- Navigation Bar END -->
+
+<!-- Current User Displayed -->
+<div class="userDisplay">
+<select class="form-control display" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
+    <option value="">Select a User</option>
+    <option value="#/newUser">New User</option>
+</select>
+</div>
+<!-- Current User Displayed END -->
+
+<div ng-if="currentUser">
+    <h3 class="currentUser">User Information</h3>
+    <table class="table edit">
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>State</th>
+                <th>Twitter Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr user user-id="{{id}}" ng-table="(id, user) in informationForCurrentUser">
+                <td><input type="text" ng-model="myInfo.city" ng-blur="updateInformation()"/></td>
+                <td><input type="text" ng-model="myInfo.state" ng-blur="updateInformation()"/></td>
+                <td><input type="text" ng-model="myInfo.twitter" ng-blur="updateInformation()"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -105,7 +105,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 }
 // Nav Menu for Home Page 
 .bmenu {
-    margin-left: 650px;
+    margin-left: 520px;
     margin-top: -330px;
     
 }
@@ -182,16 +182,16 @@ body {
     margin-top: 50px;
     margin-right: -200px;
 }
-.col-lg-2 {
-    margin-top: -150px;
-    margin-right: -500px;
+.addNewTrans {
+    margin-top: -450px;
+    margin-left: 900px;
 }
-.col-lg-2 img {
+.addNewTrans img {
     width: 75px;
     height:75px;
 }
 
-.col-lg-2 p {
+.addNewTrans p {
     font-family: 'Special Elite', cursive;
     font-size: 20px; 
 }
@@ -290,6 +290,10 @@ h2 {
     font-family: 'Special Elite', cursive;
     font-size: 25px;
 }
+.currentUser h3{
+    font-family: 'Special Elite', cursive;
+    font-size: 25px;
+}
 .form-control {
     font-family: 'Special Elite', cursive;
     font-size: 15px;
@@ -299,6 +303,13 @@ h2 {
     font-size: 15px;
 }
 td {
+    font-family: 'Special Elite', cursive;
+    font-size: 15px;
+}
+.display {
+    margin-top: 350px;
+}
+.currentUserBtn {
     font-family: 'Special Elite', cursive;
     font-size: 15px;
 }

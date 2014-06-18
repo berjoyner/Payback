@@ -42,6 +42,10 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		return users.$child(currentUser + '/users/');
 	};
 
+	var getInformationForCurrentUser = function () {
+		return users.$child(currentUser + '/users/');
+	}
+
 	var addTransactionForUsers = function (transactionRef){
 		var dataRef = new Firebase(FIREBASE_URI + '/transactions/' + transactionRef.name());
 		dataRef.on('value', function (snapshot) {
@@ -94,6 +98,7 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		setBusinessPartner: setBusinessPartner,
 		getTransactionsForCurrentUser: getTransactionsForCurrentUser,
 		removeTransactionForUsers: removeTransactionForUsers,
-		addTransactionForUsers: addTransactionForUsers
+		addTransactionForUsers: addTransactionForUsers,
+		getInformationForCurrentUser: getInformationForCurrentUser
 	};
 }]);

@@ -11,6 +11,7 @@
 	    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#" ng-click="logout()">Log Out</a></li>
 	    <!-- <li ng-cloak ng-show-auth="['logout','error']"><a href="#/login">Log In</a></li> -->
 	    <li ng-controller="LoginController"><a href="#/mybank">My Bank</a></li>
+	    <li ng-cloak ng-show-auth="login" ng-controller="LoginController"><a href="#/myProfile">My Profile</a></li>
 	    <li><a href="#/about">About</a></li>
 	</ul>
 </div>
@@ -18,7 +19,7 @@
 
 <!-- Add User to Database  -->
 <div class="formStart">
-	<h4 class="addUser">Add User - {{googleUser.displayName}}<h4>
+	<h4 class="addUser">Add User {{googleUser.displayName}}<h4>
 
 		<form class="form-inline" role="form" novalidate ng-submit="addUser(newUser)">
 			<div class="form-group">
@@ -51,7 +52,7 @@
 
 <!-- Add Transaction from User to User  -->
 <div ng-if="currentUser">
-	<h4>Add Transaction</h4>
+	<h4 class="currentUser">Add Transaction</h4>
 
 	<form class="form-inline" role="form" novalidate ng-submit="addTransaction(newTransaction)">
 		<div>
@@ -75,7 +76,7 @@
 					<option value="">Select a Business Partner</option>
 				</select>
 			</div>
-		<button type="submit" value="Add Transaction" class="btn btn-default">Add Transaction</button>
+		<button type="submit" value="Add Transaction" class="btn btn-default currentUserBtn">Add Transaction</button>
 	</form>
 </div>
 <!-- Add Transaction from User to User END  -->

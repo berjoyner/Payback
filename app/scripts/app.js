@@ -33,6 +33,11 @@ angular
         templateUrl: 'views/newAccount.html',
         controller: 'MainCtrl'
       })
+      .when('/myProfile', {
+        authRequired: true,
+        templateUrl: 'views/myProfile.html',
+        controller: 'MainCtrl'
+      })
       .when('/about', {
         authRequired: false,
         templateUrl: 'views/about.html',

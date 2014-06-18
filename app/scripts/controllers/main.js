@@ -6,6 +6,7 @@ angular.module('paybackApp')
     
     $scope.newTransaction = { type: '', amount: '', date: '', description: '', loaner: '', loanee:'', businessPartner: '', status: 'Open', createdBy:''};
     $scope.transactionsForCurrentUser = [];
+    $scope.informationForCurrentUser =[];
     $scope.tran = null;
     $scope.transactions = null;
     $scope.users = [];
@@ -15,6 +16,7 @@ angular.module('paybackApp')
  
             if ($scope.currentUser) {
                 $scope.transactions = $scope.getTransactionsForCurrentUser();
+                $scope.informationForCurrentUser = $scope.getInformationForCurrentUser();
             }
         });
  
@@ -45,6 +47,11 @@ angular.module('paybackApp')
         $scope.transactionsForCurrentUser = UsersService.getTransactionsForCurrentUser($scope.currentUser);
         return $scope.transactionsForCurrentUser;
     };
+
+    $scope.getInformationForCurrentUser = function() {
+      $scope.informationForCurrentUser = UsersService.getInformationForCurrentUser($scope.currentUser);
+        return $scope.informationForCurrentUser;
+    }
  
     $scope.removeTransaction = function (transactionId) {
         TransactionsService.removeTransaction(transactionId);

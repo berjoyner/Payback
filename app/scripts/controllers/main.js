@@ -4,7 +4,7 @@ angular.module('paybackApp')
 
   .controller('MainCtrl', function ($scope, UsersService, TransactionsService) {
     
-    $scope.newTransaction = { type: '', amount: '', date: '', description: '', submitter: '', businessPartner: '', status: 'Open'};
+    $scope.newTransaction = { type: '', amount: '', date: '', description: '', loaner: '', loanee:'', businessPartner: '', status: 'Open', createdBy:''};
     $scope.transactionsForCurrentUser = [];
     $scope.tran = null;
     $scope.transactions = null;
@@ -18,11 +18,6 @@ angular.module('paybackApp')
             }
         });
  
-    $scope.$watch('businessPartner', function () {
-            UsersService.setBusinessPartner($scope.businessPartner);
-        });
- 
- 
     $scope.addUser = function(newUser) {
         UsersService.addUser(newUser);
         console.log(newUser);
@@ -33,7 +28,16 @@ angular.module('paybackApp')
         return $scope.users;
     };
  
-    $scope.addTransaction = function(newTransaction) {      
+    $scope.addTransaction = function(newTransaction) {  
+        newTransaction.createdBy = $scope.currentUser;
+        if(newTransaction.type === 'Loan'){
+          newTransaction.loaner = $scope.currentUser;
+          newTransaction.loanee = newTransaction.businessPartner;
+        } else {
+          newTransaction.loaner = newTransaction.businessPartner;
+          newTransaction.loanee = $scope.currentUser;
+        }
+
         TransactionsService.addTransaction(newTransaction, $scope.currentUser);
     };
  

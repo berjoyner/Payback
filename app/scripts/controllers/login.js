@@ -10,7 +10,7 @@ angular.module('paybackApp')
       simpleLogin.login(service, function(err, user) {
         $scope.err = err ? err + '' : null;
         $scope.$apply(function() {
-          $rootScope.currentUser = user;
+          $rootScope.googleUser = user;
         });
       });
     };

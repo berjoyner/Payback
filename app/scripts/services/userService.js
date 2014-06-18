@@ -46,10 +46,10 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		var dataRef = new Firebase(FIREBASE_URI + '/transactions/' + transactionRef.name());
 		dataRef.on('value', function (snapshot) {
 			if (snapshot.val() != null){
-				var child = users.$child(snapshot.val().submitter + '/transactions/' + transactionRef.name());
+				var child = users.$child(snapshot.val().loaner + '/transactions/' + transactionRef.name());
 				child.$set(true);
 
-				child = users.$child(snapshot.val().businessPartner + '/transactions/' + transactionRef.name());
+				child = users.$child(snapshot.val().loanee + '/transactions/' + transactionRef.name());
 				child.$set(true);
 			}
 		});

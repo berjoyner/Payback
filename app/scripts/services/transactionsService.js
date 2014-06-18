@@ -10,7 +10,12 @@ angular.module('paybackApp').factory('TransactionsService', ['$firebase', 'FIREB
         };
  
         var addTransaction = function (transaction, currentUser) {
-            transaction.submitter = currentUser;
+            var dataRef = new Firebase(FIREBASE_URI + '/users/' + transaction.businessPartner);
+                dataRef.on('value', function(snapshot) {
+                    transaction.businessPartner = snapshot.val().name;
+                  alert('Business partner name is ' + snapshot.val().name);
+        });
+
             transactions.$add(transaction).then(function(ref){
                 alert("Transaction Added");
                 UsersService.addTransactionForUsers(ref);

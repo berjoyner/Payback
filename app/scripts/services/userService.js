@@ -6,7 +6,7 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 	var usersRef = new Firebase(FIREBASE_URI + '/users');
 	var users = $firebase(usersRef);
 	var currentUser =  null;
-	// var businessPartner = null;
+	var businessPartner = null;
 
 	var addUser = function (user) {
 		users.$add(user).then(function(ref){
@@ -26,17 +26,17 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		currentUser = user;
 	};
 
-	// var setBusinessPartner = function (user) {
-	// 	businessPartner = user;
-	// }
+	var setBusinessPartner = function (user) {
+		businessPartner = user;
+	}
 
-	// var getBusinessPartner = function () {
-	// 	return businessPartner;
-	// }
+	var getBusinessPartner = function () {
+		return businessPartner;
+	}
 
-	// var getTransactionsForCurrentUser = function () {
-	// 	return users.$child(currentUser + '/transactions/');
-	// };
+	var getTransactionsForCurrentUser = function () {
+		return users.$child(currentUser + '/transactions/');
+	};
 
 	var getCurrentUserInformation = function () {
 		return users.$child(currentUser + '/users/');
@@ -55,23 +55,34 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		});
 	};
 
+	var removeTransactionForUsers = function (transactionId){
+		var dataRef = new Firebase(FIREBASE_URI + '/transactions/' + transactionId);
+		dataRef.on('value', function(snapshot) {
+			if(snapshot.val() != null){
+				users.$remove(snapshot.val().submitter + '/transactions/' + transactionId);
+				users.$remove(snapshot.val().businessPartner + '/transactions/' + transactionId);
+
+			}
+		});
+	}; 
+
 	var addTransactionForCurrentUser = function (transactionRef) {
 		var child = users.$child(currentUser + '/transactions/' + transactionRef.name());
 		child.$set(true);
 	};
 
-	// var removeTransactionForCurrentUser = function (transactionId){
-	// 	users.$remove(currentUser + '/transactions/' + transactionId);	
-	// };
+	var removeTransactionForCurrentUser = function (transactionId){
+		users.$remove(currentUser + '/transactions/' + transactionId);	
+	};
 
-	// var addTransactionForBusinessPartner = function (transactionRef) {
-	// 	var child = users.$child(businessPartner + '/transactions/' + transactionRef.name());
-	// 	child.$set(true);
-	// };
+	var addTransactionForBusinessPartner = function (transactionRef) {
+		var child = users.$child(businessPartner + '/transactions/' + transactionRef.name());
+		child.$set(true);
+	};
 
-	// var removeTransactionForBusinessPartner = function (transactionId) {
-	// 	users.$remove(businessPartner + '/transactions/' + transactionId);
-	// };
+	var removeTransactionForBusinessPartner = function (transactionId) {
+		users.$remove(businessPartner + '/transactions/' + transactionId);
+	};
 
 	return {
 		addUser: addUser,
@@ -79,10 +90,10 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		getCurrentUser: getCurrentUser,
 		setCurrentUser: setCurrentUser,
 		getCurrentUserInformation: getCurrentUserInformation,
-		// getBusinessPartner: getBusinessPartner,
-		// setBusinessPartner: setBusinessPartner,
-		// getTransactionsForCurrentUser: getTransactionsForCurrentUser,
-		// removeTransactionForUsers: removeTransactionForUsers,
+		getBusinessPartner: getBusinessPartner,
+		setBusinessPartner: setBusinessPartner,
+		getTransactionsForCurrentUser: getTransactionsForCurrentUser,
+		removeTransactionForUsers: removeTransactionForUsers,
 		addTransactionForUsers: addTransactionForUsers
 	};
 }]);

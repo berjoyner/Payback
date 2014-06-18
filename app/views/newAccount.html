@@ -18,7 +18,7 @@
 
 <!-- Add User to Database  -->
 <div class="formStart">
-	<h4 class="addUser">Add User<h4>
+	<h4 class="addUser">Add User - {{currentUser.displayName}}<h4>
 
 		<form class="form-inline" role="form" novalidate ng-submit="addUser(newUser)">
 			<div class="form-group">
@@ -43,7 +43,7 @@
 
 <!-- Current User Displayed -->
 <h3 class="currentUser"> Current User </h3>
-<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()" onchange="location = this.options[this.selectedIndex].value;">
+<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
 	<option value="">Select a User</option>
 	<option value="#/newUser">New User</option>
 </select>
@@ -75,7 +75,7 @@
 					<option value="">Select a Business Partner</option>
 				</select>
 			</div>
-		<button type="submit" value="Add Transaction" class="btn btn-default">Add Transaction</button>
+		<button type="submit" value="Add Transaction" class="btn btn-default" ng-href="#/mybank">Add Transaction</button>
 	</form>
 </div>
 <!-- Add Transaction from User to User END  -->

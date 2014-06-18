@@ -5,9 +5,9 @@ angular.module('paybackApp').factory('TransactionsService', ['$firebase', 'FIREB
         var transactionsRef = new Firebase(FIREBASE_URI + 'transactions');
         var transactions = $firebase(transactionsRef);
  
-        // var getTransactions = function () {
-        //     return transactions;
-        // };
+        var getTransactions = function () {
+            return transactions;
+        };
  
         var addTransaction = function (transaction, currentUser) {
             transaction.submitter = currentUser;
@@ -17,17 +17,17 @@ angular.module('paybackApp').factory('TransactionsService', ['$firebase', 'FIREB
             })
         };
  
-        // var removeTransaction = function (transactionId) {
-        //     UsersService.removeTransactionForUsers(transactionId);
-        //     transactions.$remove(transactionId);
-        //         alert("Transaction Removed");
-        //     }
+        var removeTransaction = function (transactionId) {
+            UsersService.removeTransactionForUsers(transactionId);
+            transactions.$remove(transactionId);
+                alert("Transaction Removed");
+            }
         
  
         return {
-            // getTransactions: getTransactions,
+            getTransactions: getTransactions,
             addTransaction: addTransaction,
-            // removeTransaction: removeTransaction
+            removeTransaction: removeTransaction
         };
     }]);
 

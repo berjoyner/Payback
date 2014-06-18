@@ -18,9 +18,9 @@ angular.module('paybackApp')
             }
         });
  
-    // $scope.$watch('businessPartner', function () {
-    //         UsersService.setBusinessPartner($scope.businessPartner);
-    //     });
+    $scope.$watch('businessPartner', function () {
+            UsersService.setBusinessPartner($scope.businessPartner);
+        });
  
  
     $scope.addUser = function(newUser) {
@@ -37,14 +37,14 @@ angular.module('paybackApp')
         TransactionsService.addTransaction(newTransaction, $scope.currentUser);
     };
  
-    // $scope.getTransactionsForCurrentUser = function() {
-    //     $scope.transactionsForCurrentUser = UsersService.getTransactionsForCurrentUser($scope.currentUser);
-    //     return $scope.transactionsForCurrentUser;
-    // };
+    $scope.getTransactionsForCurrentUser = function() {
+        $scope.transactionsForCurrentUser = UsersService.getTransactionsForCurrentUser($scope.currentUser);
+        return $scope.transactionsForCurrentUser;
+    };
  
-    // $scope.removeTransaction = function (transactionId) {
-    //     TransactionsService.removeTransaction(transactionId);
-    // };
+    $scope.removeTransaction = function (transactionId) {
+        TransactionsService.removeTransaction(transactionId);
+    };
  
  
   });

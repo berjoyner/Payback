@@ -14,7 +14,7 @@ angular.module('paybackApp')
             UsersService.setCurrentUser($scope.currentUser);
  
             if ($scope.currentUser) {
-                // $scope.transactions = $scope.getTransactionsForCurrentUser();
+                $scope.transactions = $scope.getTransactionsForCurrentUser();
             }
         });
  

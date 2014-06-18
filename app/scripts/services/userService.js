@@ -59,8 +59,8 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 		var dataRef = new Firebase(FIREBASE_URI + '/transactions/' + transactionId);
 		dataRef.on('value', function(snapshot) {
 			if(snapshot.val() != null){
-				users.$remove(snapshot.val().submitter + '/transactions/' + transactionId);
-				users.$remove(snapshot.val().businessPartner + '/transactions/' + transactionId);
+				users.$remove(snapshot.val().loaner + '/transactions/' + transactionId);
+				users.$remove(snapshot.val().loanee + '/transactions/' + transactionId);
 
 			}
 		});

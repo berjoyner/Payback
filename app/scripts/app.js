@@ -26,7 +26,7 @@ angular
       .when('/mybank',{
         authRequired: true,
         templateUrl: 'views/mybank.html',
-        controller: 'LoginController'
+        controller: 'MainCtrl'
       })
       .when('/newAccount', {
         authRequired: false,

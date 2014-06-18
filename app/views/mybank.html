@@ -28,6 +28,14 @@
     <img src="images/owe.png">
 </div>
 
+<!-- Current User Displayed -->
+<h3 class="currentUser"> Current User </h3>
+<select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
+    <option value="">Select a User</option>
+    <option value="#/newUser">New User</option>
+</select>
+<!-- Current User Displayed END -->
+
 <div ng-if="currentUser">
     <h3>Transactions</h3>
     <table class="table edit">

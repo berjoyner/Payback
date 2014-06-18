@@ -17,14 +17,14 @@
 
 <container>
 <!-- Current User Displayed -->
-<div class="userDisplay">
+<div class="profileUser">
 <select class="form-control display" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
     <option value="">Select a User</option>
 </select>
 </div>
 <!-- Current User Displayed END -->
 
-<div ng-if="currentUser">
+<div class="profileCurrentUser" ng-if="currentUser">
     <h3 class="currentUser">User Information</h3>
     <table class="table edit">
         <thead>

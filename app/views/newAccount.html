@@ -43,15 +43,17 @@
 <!-- Add User to Database END  -->
 
 <!-- Current User Displayed -->
+<div class="accountUser">
 <h3 class="currentUser"> Current User </h3>
 <select class="form-control" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
 	<option value="">Select a User</option>
 	<option value="#/newUser">New User</option>
 </select>
+</div>
 <!-- Current User Displayed END -->
 
 <!-- Add Transaction from User to User  -->
-<div ng-if="currentUser">
+<div class="accountAddUser" ng-if="currentUser">
 	<h4 class="currentUser">Add Transaction</h4>
 
 	<form class="form-inline" role="form" novalidate ng-submit="addTransaction(newTransaction)">

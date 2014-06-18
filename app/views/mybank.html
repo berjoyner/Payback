@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html ng-app="paybackApp">
+<head>
+</head>
+<body>
+
 <!-- Navigation Bar -->
 <div>
     <ul class="bmenu">
@@ -12,13 +18,20 @@
 
 <!-- Main Bank and Using Users -->
 <div class="row welcome">
-	<span class="welcome1">Welcome! {{googleUser | json}}</span><br>
+	<span class="welcome1">Welcome! {{googleUser.name}}</span><br>
 	<center><span style="font-size:55pt" class="bank1">My Bank.</span><br></center>
+</div>
+
+<div class="col-lg-2">
+    <container class="addNewTrans">
+    <p> New Transaction</p>
+    <a href="#/newAccount"><img src="images/owed.png"></a>
+</container>
 </div>
 <!-- Main Bank and Using Users END-->
 
 <!-- Current User Transactions  -->
-<div class="col-lg-5 left">
+<!-- <div class="col-lg-5 left">
     <p>Loaned</p>
     <img src="images/owed.png">
 </div>
@@ -26,7 +39,7 @@
 <div class="col-lg-5 right">
     <p>Borrowed</p>
     <img src="images/owe.png">
-</div>
+</div> -->
 
 <!-- Current User Displayed -->
 <div class="userDisplay">
@@ -37,6 +50,8 @@
 </div>
 <!-- Current User Displayed END -->
 
+<!-- Current Transactions for User Displayed -->
+<container class="Bank">
 <div ng-if="currentUser">
     <h3>Transactions</h3>
     <table class="table edit">
@@ -63,19 +78,16 @@
         </tbody>
     </table>
 </div>
+</container>
+<!-- Current Transactions for User Displayed END -->
 
-<!-- <div class="tweetbtn"><a href="http://twitter.com/home?status=Time to pay up and Payback. See what you @ owe: http://127.0.0.1:9000/#/"><img src="images/twitterbtn.png"></a></div> -->
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-text="Time to pay up and Payback! See what you owe:">Tweet</a>
+<div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Time to pay up and Payback! See what you owe:">Tweet</a>
 
 <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 </script>
-
-
-<div class="col-lg-2 addNewTrans">
-    <p> New Transaction</p>
-    <a href="#/newAccount"><img src="images/$.png"></a>
 </div>
 
-<!-- Current User Transactions END 
+</body>
+</html>

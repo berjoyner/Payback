@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html ng-app="paybackApp">
+<head>
+</head>
+<body>
+
 <!-- Navigation Bar -->
 <div>
 	<ul class="bmenu">
@@ -9,11 +15,11 @@
 </div>
 <!-- Navigation Bar END -->
 
+<container>
 <!-- Current User Displayed -->
 <div class="userDisplay">
 <select class="form-control display" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
     <option value="">Select a User</option>
-    <option value="#/newUser">New User</option>
 </select>
 </div>
 <!-- Current User Displayed END -->
@@ -37,3 +43,7 @@
         </tbody>
     </table>
 </div>
+
+</container>
+</body>
+</html>

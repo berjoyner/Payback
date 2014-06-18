@@ -94,6 +94,11 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 //     }
 // }
 
+.container {
+    background-color:lightgrey;
+    margin: 30px;
+    width: 90%;
+}
 .googlelogin {
     text-decoration: none;
     list-style-type: none;
@@ -106,8 +111,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // Nav Menu for Home Page 
 .bmenu {
     margin-left: 520px;
-    margin-top: -330px;
-    
+    margin-top: -360px;
 }
 .bmenu li {
     font-size: 20px;
@@ -160,6 +164,8 @@ fieldset {
 
 body {
     background: #e2eadf;
+    width:1450px;
+    height:1200px;
 }
 .logo {
     font-family: 'Special Elite', cursive;
@@ -174,6 +180,12 @@ body {
     font-family: 'Special Elite', cursive;
     font-size: 25px;  
 }
+
+.col-lg-2 {
+    margin-top: -140px;
+    margin-left: 980px;
+}
+
 .left {
     margin-top: 50px;
     margin-left: 150px;
@@ -182,10 +194,7 @@ body {
     margin-top: 50px;
     margin-right: -200px;
 }
-.addNewTrans {
-    margin-top: -450px;
-    margin-left: 900px;
-}
+
 .addNewTrans img {
     width: 75px;
     height:75px;
@@ -197,8 +206,8 @@ body {
 }
 
 .welcome {
-    margin-top: 350px;
-    margin-left: -100px;
+    margin-top: 380px;
+    margin-left: -10px;
     font-family: 'Special Elite', cursive;
     font-size: 25px;
 }
@@ -277,7 +286,7 @@ h2 {
     height: 100px;
 }
 .formStart {
-    margin-top: 350px;
+    margin-top: 380px;
 }
 .form-control input:focus {
     border:solid 1px #799379; 
@@ -287,6 +296,7 @@ h2 {
     font-size: 25px;
 }
 .currentUser {
+    margin-top: -400px;
     font-family: 'Special Elite', cursive;
     font-size: 25px;
 }
@@ -307,7 +317,7 @@ td {
     font-size: 15px;
 }
 .display {
-    margin-top: 350px;
+    margin-top: 100px;
 }
 .currentUserBtn {
     font-family: 'Special Elite', cursive;
@@ -316,4 +326,17 @@ td {
 .tweetbtn img {
     width: 100px;
     height:80px;
+}
+
+legend {
+    font-family: 'Special Elite', cursive;
+    font-size: 25px;
+}
+
+.userDisplay {
+    margin-top: -100px;
+}
+
+.rowlog {
+    margin-top: 100px;
 }

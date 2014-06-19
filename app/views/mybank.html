@@ -53,62 +53,114 @@
 <!-- Current Transactions for User Displayed -->
 <container class="Bank">
 <div ng-if="currentUser">
-    <h3>Transactions</h3>
-    <table class="table edit">
-        <thead>
-            <tr>
-                <th>Type</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Business Partner</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr transaction transaction-id="{{id}}" ng-repeat="(id, transaction) in transactions">
-                <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" value="Loan">
-                </td>
-                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
-                    <input type="text" value="Borrow">
-                </td>
-                <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
-                    <input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
-                    <input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
-                    <input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" ng-model="myTransaction.loaneeName" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
-                    <input type="text" ng-model="myTransaction.loanerName" ng-blur="updateTransaction()"/>
-                </td>
-                <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" ng-model="myTransaction.status" disabled="true"/>
-                </td>
-                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
-                    <input type="text" ng-model="myTransaction.status" disabled="true"/>
-                </td>
-                <td ng-if="myTransaction.createdBy==currentUser">
-                    <center><a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a></center>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <h3>Transactions</h3>
+    <table class="table edit">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Business Partner</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr transaction transaction-id="{{id}}" ng-repeat="(id, transaction) in transactions">                
+                <!--loan types-->
+                <td ng-if="myTransaction.loaner==currentUser" class="loan">
+                    <input type="text" value="Loaner" disabled="true">
+                </td>
+                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
+                    <input type="text" value="Borrow" disabled="true">
+                </td>
+                <!--amounts-->
+                <td ng-if="myTransaction.loaner==currentUser" class="loan">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()" disabled="true"/>
+                    </span>
+                </td>
+                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.amount" ng-blur="updateTransaction()" disabled="true"/>
+                    </span>
+                </td>
+
+                <!--dates-->
+                <td ng-if="myTransaction.loaner==currentUser" class="loan">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()" disabled="true"/>
+                    </span>                    
+                </td>
+                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.date" ng-blur="updateTransaction()" disabled="true"/>
+                    </span>     
+                </td>
+
+                <!--description-->
+                <td ng-if="myTransaction.loaner==currentUser" class="loan">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()" disabled="true"/>
+                    </span>                         
+                </td>
+                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.description" ng-blur="updateTransaction()" disabled="true"/>
+                    </span>                                         
+                </td>
+
+                <!--partner name-->
+                <td ng-if="myTransaction.loaner==currentUser" class="loan">
+                    <input type="text" ng-model="myTransaction.loaneeName" ng-blur="updateTransaction()" disabled="true"/>
+                </td>
+                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
+                    <input type="text" ng-model="myTransaction.loanerName" ng-blur="updateTransaction()" disabled="true"/>
+                </td>
+
+                <!--status-->
+                <td ng-if="myTransaction.loaner==currentUser" class="loan">
+                    <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.status"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.status" disabled="true"/>
+                    </span>                    
+                </td>
+                <td ng-if="myTransaction.loanee==currentUser" class="borrow">
+                     <span ng-if="myTransaction.createdBy==currentUser">
+                        <input type="text" ng-model="myTransaction.status"/>
+                    </span>
+                    <span ng-if="myTransaction.createdBy!=currentUser">
+                        <input type="text" ng-model="myTransaction.status" disabled="true"/>
+                    </span>   
+                </td>
+
+                <!--remove-->
+                <td ng-if="myTransaction.createdBy==currentUser">
+                    <a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </container>
 <!-- Current Transactions for User Displayed END -->

@@ -103,8 +103,8 @@
                 <td ng-if="myTransaction.loanee==currentUser" class="borrow">
                     <input type="text" ng-model="myTransaction.status" disabled="true"/>
                 </td>
-                <td>
-                    <a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a>
+                <td ng-if="myTransaction.createdBy==currentUser">
+                    <center><a href="#" ng-click="removeTransaction(id)" class="navbar-link">Remove Transaction</a></center>
                 </td>
             </tr>
         </tbody>

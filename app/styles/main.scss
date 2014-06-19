@@ -96,7 +96,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 .container {
     background-color:lightgrey;
-    margin: 30px;
+    margin: 20px;
     width: 90%;
 }
 .googlelogin {
@@ -355,4 +355,11 @@ legend {
 
 .profileCurrentUser {
     margin-top: 450px;
+}
+.loan {
+    background-color: green;
+}
+
+.borrow {
+    background-color: red;
 }

@@ -10,10 +10,15 @@ angular.module('paybackApp').factory('TransactionsService', ['$firebase', 'FIREB
         };
  
         var addTransaction = function (transaction, currentUser) {
-            var dataRef = new Firebase(FIREBASE_URI + '/users/' + transaction.businessPartner);
+            var dataRef = new Firebase(FIREBASE_URI + '/users/' + transaction.loaner);
                 dataRef.on('value', function(snapshot) {
-                    transaction.businessPartner = snapshot.val().name;
-                  console.log('Business partner name is ' + snapshot.val().name);
+                    transaction.loanerName = snapshot.val().name;
+                  console.log('Loaner name is ' + snapshot.val().name);
+        });
+            var dataRef = new Firebase(FIREBASE_URI + '/users/' + transaction.loanee);
+                dataRef.on('value', function(snapshot) {
+                    transaction.loaneeName = snapshot.val().name;
+                  console.log('Loanee name is ' + snapshot.val().name);
         });
 
             transactions.$add(transaction).then(function(ref){

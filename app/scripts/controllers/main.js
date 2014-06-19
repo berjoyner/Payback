@@ -4,7 +4,7 @@ angular.module('paybackApp')
 
   .controller('MainCtrl', function ($scope, UsersService, TransactionsService) {
     
-    $scope.newTransaction = { type: '', amount: '', date: '', description: '', loaner: '', loanee:'', businessPartner: '', status: 'Open', createdBy:''};
+    $scope.newTransaction = { type: '', amount: '', date: '', description: '', loaner: '', loanee:'', loaneeName:'', loanerName:'', status: 'Open', createdBy:''};
     $scope.transactionsForCurrentUser = [];
     $scope.informationForCurrentUser =[];
     $scope.tran = null;

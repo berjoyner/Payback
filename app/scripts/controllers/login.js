@@ -9,7 +9,7 @@ angular.module('paybackApp')
     $scope.login = function(service) {
       simpleLogin.login(service, function(err, user) {
         $scope.err = err ? err + '' : null;
-        $rootScope.$apply(function() {
+        $scope.$apply(function() {
           $rootScope.googleUser = user;
           $rootScope.googleUserName = user.displayName;
           $rootScope.googleUserPic = user.picture;

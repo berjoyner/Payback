@@ -18,7 +18,8 @@
 
 <!-- Main Bank and Using Users -->
 <div class="row welcome">
-    <span class="welcome1">Welcome! {{googleUser.name}}</span><br>
+    <span class="welcome1">Welcome  {{googleUser.displayName}}!</span><br>
+    {{googleUserPic}}
     <center><span style="font-size:55pt" class="bank1">My Bank.</span><br></center>
 </div>
 
@@ -49,6 +50,18 @@
 </select>
 </div>
 <!-- Current User Displayed END -->
+
+  <script type='text/javascript'>
+    $(document).ready(function(){
+        $('tr').each(function(){
+          if($(this).find('td:last').text() === "Loan"){
+              $(this).css('background','green');
+          }
+
+        });
+    });
+    </script>
+
 
 <!-- Current Transactions for User Displayed -->
 <container class="Bank">
@@ -82,7 +95,7 @@
 <!-- Current Transactions for User Displayed END -->
 
 <div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Time to pay up and Payback! See what you owe:">Tweet</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Time to pay up and Payback! See what you owe:" data-size="large" data-count="none">Tweet</a>
 
 <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

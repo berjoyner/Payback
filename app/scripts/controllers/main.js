@@ -2,7 +2,7 @@
  
 angular.module('paybackApp')
 
-  .controller('MainCtrl', function ($scope, UsersService, TransactionsService) {
+  .controller('MainCtrl', function ($scope, UsersService, TransactionsService, $location) {
     
     $scope.newTransaction = { type: '', amount: '', date: '', description: '', loaner: '', loanee:'', loaneeName:'', loanerName:'', status: 'Open', createdBy:''};
     $scope.transactionsForCurrentUser = [];
@@ -41,6 +41,7 @@ angular.module('paybackApp')
         }
 
         TransactionsService.addTransaction(newTransaction, $scope.currentUser);
+        $location.path('/mybank');
     };
  
     $scope.getTransactionsForCurrentUser = function() {

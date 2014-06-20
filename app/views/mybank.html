@@ -45,7 +45,6 @@
 <div class="userDisplay">
 <select class="form-control display" ng-model="currentUser" ng-options="userId as user.name for (userId, user) in getUsers()">
     <option value="">Select a User</option>
-    <option value="#/newUser">New User</option>
 </select>
 </div>
 <!-- Current User Displayed END -->
@@ -69,7 +68,7 @@
             <tr transaction transaction-id="{{id}}" ng-repeat="(id, transaction) in transactions">                
                 <!--loan types-->
                 <td ng-if="myTransaction.loaner==currentUser" class="loan">
-                    <input type="text" value="Loaner" disabled="true">
+                    <input type="text" value="Loan" disabled="true">
                 </td>
                 <td ng-if="myTransaction.loanee==currentUser" class="borrow">
                     <input type="text" value="Borrow" disabled="true">

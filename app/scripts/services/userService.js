@@ -10,7 +10,7 @@ angular.module('paybackApp').factory('UsersService', ['$firebase', 'FIREBASE_URI
 
 	var addUser = function (user) {
 		users.$add(user).then(function(ref){
-			alert("User Added");
+		
 		});
 	};
 
